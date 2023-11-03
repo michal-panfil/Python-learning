@@ -21,6 +21,6 @@ from django.urls import include, path
 from django.contrib import admin
 
 urlpatterns = [
-    path("orders/", include("orderApp.urls")),
+    path("shop/", include("orderApp.urls")),
     path('admin/', admin.site.urls),
 ]
