@@ -1,0 +1,13 @@
+<!-- pages/templates/pages/home.html -->
+
+{% extends "./base.html" %}
+
+{% block page_content %}
+    <h1> products list2:</h1>
+    count : {{products.count}}
+    {% for product in products %}
+        {{product.name}}
+    {% endfor%}
+
+    end
+{% endblock page_content %}
