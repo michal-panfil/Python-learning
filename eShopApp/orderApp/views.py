@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core.serializers import serialize
 
 from django.http import HttpResponse
 
@@ -9,7 +10,12 @@ def home(request):
 
 def products(request):
     products = Product.objects.all()
-    return render(request, "pages/productsList.html", {"products": products})
+
+    
+    # Serializing the product object to JSON
+    product_json = serialize('json', products)
+
+    return render(request, "pages/productsList.html", {"products": products, "jsonprd": product_json})
 
 def orders(request):
     return render(request, "pages/orders.html", {})
