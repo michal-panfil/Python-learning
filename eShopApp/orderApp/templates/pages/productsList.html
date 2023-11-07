@@ -1,20 +1,64 @@
 <!-- pages/templates/pages/home.html -->
 
+
 {% extends "./base.html" %}
 
+
 {% block page_content %}
-    <h1> products list2:</h1>
-    count : {{products.count}}
-    {% for product in products %}
-    <div class="col-md-6 col-lg-4 col-xl-3">
-        <div id="product-1" class="single-product">
-                <div class="part-2">
-                        <h3 class="product-title">{{product.name}}</h3>
-                        <h4 class="product-old-price">{{product.category}}</h4>
-                        <h4 class="product-old-price">{{product.details.price}}</h4>
+
+
+<section class="section-products">
+        <div class="container">
+                <div class="row justify-content-center text-center">
+                        <div class="col-md-8 col-lg-6">
+                                <div class="header">
+                                        <h3>EShop</h3>
+                                        <h2>Popular Products</h2>
+                                </div>
+                        </div>
+                </div>
+                <div class="row">
+                        {% for product in products %}
+                        <!-- Single Product -->
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div id="product-1" class="single-product">
+                                        <div class="part-1">
+                                                <span class="discount">15% off</span>
+
+                                        </div>
+                                        <div class="part-2">
+                                                <h3 class="product-title">{{product.name}}</h3>
+                                                <h4 class="badge badge-success">${{product.category}}</h4>
+                                                <h4 class="product-price">${{product.details.price}}</h4>
+                                        </div>
+                                        <div class="d-flex justify-content-around">
+                                                <button class="btn btn-primary">Add to Cart</button>
+                                                <button class="btn btn-secondary">Details</button>
+
+                                        </div>
+
+
+                                </div>
+                        </div>
+                        {% endfor%}
+                       
                 </div>
         </div>
-</div>
-    {% endfor%}
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 {% endblock page_content %}
