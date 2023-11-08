@@ -17,6 +17,7 @@
                                 </div>
                         </div>
                 </div>
+                <button class="btn btn-primary"><a href="products/create">Add Product</a></button>
                 <div class="row">
                         {% for product in products %}
                         <!-- Single Product -->
@@ -24,6 +25,7 @@
                                 <div id="product-1" class="single-product">
                                         <div class="part-1">
                                                 <span class="discount">15% off</span>
+                                                <img src="https://images.pexels.com/photos/821651/pexels-photo-821651.jpeg" alt="{{product.name}}" width="250" height="250">
 
                                         </div>
                                         <div class="part-2">
@@ -33,7 +35,7 @@
                                         </div>
                                         <div class="d-flex justify-content-around">
                                                 <button class="btn btn-primary">Add to Cart</button>
-                                                <button class="btn btn-secondary">Details</button>
+                                                <button class="btn btn-secondary"><a href="products/{{product.id}}">Details</a></button>
 
                                         </div>
 
@@ -45,20 +47,6 @@
                 </div>
         </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 {% endblock page_content %}

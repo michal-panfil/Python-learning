@@ -1,0 +1,14 @@
+{% extends "./base.html" %}
+{% block page_content %}
+<div class="container">
+ <div class="p-flex flex-column" style="max-width: 8    00px;">
+    <h2 class="center ">Product details</h2>
+    <img src="https://images.pexels.com/photos/821651/pexels-photo-821651.jpeg" alt="{{product.name}}" width="500" height="500">
+    <h3 class="product-title">{{product.name}}</h3>
+    <h4 class="badge badge-success">${{product.category}}</h4>
+    <h4 class="product-price">${{product.details.price}}</h4>
+ </div>
+
+</div>
+
+{% endblock page_content %}
